@@ -1,0 +1,239 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Itzia Alvarez</title>
+
+  <link href="css/estilos.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+  <link href="jquery-mobile/jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+  <link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/estilos.css">
+
+</head> 
+<body> 
+
+<!--Página de Inicio-->
+<div data-role="page" id="pag_Inicio" data-theme="e" >
+      <div data-role="header">
+      
+                <a href="#pag_AgregarServicio" data-role="button" data-inline="true" data-icon="plus" >Agregar Servicio</a>
+                <a href="#pag_Acerca" data-role="button" data-icon="info" data-inline="true" data-icon="plus" >Acerca de Mi</a>
+           
+        <h1>Catálogo de Servicios</h1>        
+      </div>
+
+      <div>
+        <img src="images/2.png" width="600" height="100">
+      </div>
+      
+      <div data-role="content" id="cont_Inicio">  
+          <div data-role="collapsible-set" data-theme="b" data-content-theme="d" id="mainColl">
+          </div>
+      </div>
+      <!--Footer-->
+   <div data-role="footer" data-position="fixed" data-id="footer">
+   <div data-role="navbar">
+        <ul>
+          <li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+          <li><a href="#pagInfo" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#pag_AgregarServicio" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<!--Fin pagina de inicio-->     
+<!--Agregar Servicios-->
+
+<div data-role="page" id="pag_AgregarServicio" data-theme="a">
+  <div data-role="header">
+    <h1>Agregar Servicios</h1>
+  </div>
+  <div data-role="content"> 
+      <div class="form" name="frm_AgregarServicio" id="frm_AgregarServicio">
+         <!--Imagen-->
+         
+       <!--ID-->
+          <label for="txt_ID">ID:</label>
+          <input type="text" name="txt_ID" id="txt_ID" required>
+      <!--Nombre-->
+          <label for="txt_Nombre">Nombre del Servicio:</label>
+          <input type="text" name="txt_Nombre" id="txt_Nombre" required>
+      <!--Descripción-->
+          <label for="txt_Imagen"> Imagen:</label>
+          <form enctype="multipart/form-data" action="uploader.php" method="POST">
+          <input name="uploadedfile" type="file" />
+          </form> 
+  <!--telefono -->
+         <label for="txt_Telefono">Teléfono</label>
+         <input type="text" name="txt_Telefono" id="txt_Telefono" value="" required>
+      <!--e-mail -->
+          <label for="txt_Mail">Correo:</label>
+          <input type="email" name="txt_Mail" id="txt_Mail" value="" required>
+      <!--Domicilio -->
+          <label for="txt_Domicilio">Domicilio:</label>
+          <input type="text" name="txt_Domicilio" id="txt_Domicilio" value="" required>
+    <!--Categoria-->
+        <label for="txt_Categoria">Categoría:</label>
+          <input type="text" name="txt_Categoria" id="txt_Categoria" value="" required>
+    <!--Nota -->
+          <label for="txt_Nota">Nota:</label>
+          <textarea cols="40" rows="8" name="txt_Nota" id="txt_Nota" required ></textarea>
+ 
+ <div class="ui-btn-icon-left" >
+    <!--Guardar-->
+         <input type="button" value="Agregar" id="btn_AgregarServicio" name="btn_AgregarServicio" data-theme="b"/ >
+                 
+      <a href="#pag_Inicio"><input type="button" value="Cancelar" id="Cancelar" name="Cancelar"/ ></a>
+</div>
+      </div>  
+  </div>
+  <!--Footer-->
+   <div data-role="footer" data-position="fixed" data-id="footer">
+   <div data-role="navbar">
+        <ul>
+          <li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+          <li><a href="#pag_Inicio" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#pagInfo" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#pag_InfoServicio" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+
+<!-- FIN Agregar Servicios-->
+
+
+<!--Información del Servicio-->
+
+<div data-role="page" id="pag_InfoServicio" data-theme="e" >
+  <div data-role="header">
+    <h1>Información del Servicio</h1>
+  </div>
+  <div data-role="content">
+    <div id="contenedor_Servicio">
+    </div>
+
+
+      
+  </div>
+  <!--Footer-->
+   <div data-role="footer" data-position="fixed" data-id="footer">
+   <div data-role="navbar">
+        <ul>
+          <li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+      <li><a href="#pag_Inicio" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#pagInfo" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#pag_EditarServicio" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+
+<div data-role="page" id="pag_EditarServicio">
+  <div data-role="header">
+    <h1>Editar Servicio</h1>
+  </div>
+  <div data-role="content" id="cont_EditarServicio">  
+    <div class="form" name="frm_EditarServicio" id="frm_EditarServicio">
+       <!--ID-->
+          <label for="txt_EditarID">ID:</label>
+          <input type="text" name="txt_EditarID" id="txt_EditarID" required readonly>
+      <!--Nombre-->
+          <label for="txt_EditarNombre">Nombre:</label>
+          <input type="text" name="txt_EditarNombre" id="txt_EditarNombre" required>
+      <!--Descripción-->
+         <!--telefono -->
+         <label for="txt_Telefono">Teléfono</label>
+         <input type="text" name="txt_Telefono" id="txt_Telefono" value="" required>
+      <!--e-mail -->
+          <label for="txt_EditarMail">Correo:</label>
+          <input type="email" name="txt_EditarMail" id="txt_EditarMail" value="" required>
+      <!--Domicilio -->
+          <label for="txt_EditarDomicilio">Domicilio:</label>
+          <textarea cols="40" rows="8" name="txt_EditarDomicilio" id="txt_EditarDomicilio"></textarea>
+    <!--Categoria-->
+        <label for="txt_EditarCategoria">Categoría:</label>
+          <input type="text" name="txt_EditarCategoria" id="txt_EditarCategoria" value="" required>
+    <!--Nota -->
+          <label for="txt_EditarNota">Nota:</label>
+          <textarea cols="40" rows="8" name="txt_EditarNota" id="txt_EditarNota" required ></textarea>
+ 
+    <!--Guardar-->
+         <input type="button" value="Actualizar" id="btn_EditarServicio" name="btn_EditarServicio"/ >
+         <input type="button" value="Eliminar"  id="btn_EliminarServicio" name="btn_EliminarServicio"/ >
+         <a href="#pag_Inicio"><input type="button" value="Cancelar" id="Cancelar" name="Cancelar"/ ></a>
+
+      </div>  
+  
+        
+  </div>
+  <!--Footer-->
+   <div data-role="footer" data-position="fixed" data-id="footer">
+   <div data-role="navbar">
+        <ul>
+          <li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+      <li><a href="#pag_Inicio" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#pagInfo" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#JQueryMobile" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<!--Acerca de Mí-->
+<div data-role="page" id="pag_Acerca" data-theme="e" >
+  <div data-role="header">
+    <h1>Acerca de mi</h1>
+  </div>
+  <div data-role="content">
+      <!--Galería de Imagenes-->
+      <div align="center"><img src="images/1.jpg" width="180" height="174" alt="imagen"></div>
+  <p>
+    <ul data-role="listview">
+      <li>
+        <h3>Itzia Guadalupe Alvarez Apodaca</h3>
+        <p> <h2>Carrera: Lincenciatura en Ingenieria en Sistemas de Informacion<br> Materia: Desarrollo de aplicaciones para comercio electrónico  </h2></p>
+      </li>
+
+    </ul> 
+        </div>
+  <!--Footer-->
+   <div data-role="footer" data-position="fixed" data-id="footer">
+   <div data-role="navbar">
+        <ul>
+          <li><a href="#" data-rel="back" data-role="button" data-icon="arrow-l">Atras</a></li>
+          <li><a href="#pag_Inicio" data-role="button" data-icon="home">Inicio</a></li>
+          <li><a href="#pagInfo" data-role="button" data-icon="info">Info</a></li>
+          <li><a href="#JQueryMobile" data-role="button" data-icon="arrow-r">Siguiente</a></li>
+        </ul>
+     </div>
+  </div>
+</div>
+<!--Info Dialog-->
+<div data-role="dialog" id="pagInfo" data-theme="a">
+<div data-role="header">
+<h1>Información</h1>
+<div data-role="content">
+<p>Aplicación desarrollada mediante PhoneGap para Proyecto Final</p>
+<p> Itzia Alvarez 2017</p>
+
+<a href="#" data-rel="back" data-icon="arrow-l">  
+ <center><input type="button" value="Cerrar"/></center>
+ </a>
+
+</div>
+</div>
+</div>
+
+
+
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<!--<script src="js/jquery.min.js"></script>-->
+<script src="js/functions/reg_Servicio.js"></script>
+<script src="js/functions/gallery.js"></script>
+
+
+
+</body>
+</html>
