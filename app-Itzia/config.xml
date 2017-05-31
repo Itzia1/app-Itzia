@@ -14,9 +14,9 @@
     Itzia Alvarez 
 </author>
 
-<icon src="images/icono.png" gap:density="ldpi" gap:platform="android" />
-<icon src="images/icono.png" gap:density="mdpi" gap:platform="android" />
-<icon src="images/icono.png" gap:density="hdpi" gap:platform="android" />
-<icon src="images/icono.png" gap:density="xhdpi" gap:platform="android" />
+<icon src="images/Icono.jpg" gap:density="ldpi" gap:platform="android" />
+<icon src="images/Icono.jpg" gap:density="mdpi" gap:platform="android" />
+<icon src="images/Icono.jpg" gap:density="hdpi" gap:platform="android" />
+<icon src="images/Icono.jpg" gap:density="xhdpi" gap:platform="android" />
 <icon src="images/Icono.jpg" gap:platform="android" gap:density="hdpi" />
 </widget>
